@@ -61,10 +61,19 @@ body {
 
 /* Section Separator Styles */
 
+.section--white {
+    background-color: var(--white);
+}
+
+.section--gray {
+    background-color: var(--light-grey);
+}
+
 .section-separator {
     position: absolute;
     bottom: -24px;
     left: calc(50% - 64px);
+    z-index: 2;
 }
 
 .section-separator__icon {
@@ -224,6 +233,10 @@ body {
     max-width: 100%;
 }
 
+.db-info__image:first-child {
+    order: 2;
+}
+
 
 /* Characters Styles  */
 
@@ -242,6 +255,7 @@ body {
     border-radius: 5px;
     box-shadow: 2px 2px 10px var(--dark-grey);
     font-size: 1.4rem;
+    position: relative;
 }
 
 .character__header {
@@ -264,32 +278,74 @@ body {
 }
 
 .character__body {
-    padding: 10px;
+    padding: 15px;
     text-align: left;
     background-color: var(--white);
 }
 
 .character__link {
+    display: block;
     font-weight: bold;
     color: var(--blue);
     text-decoration: none;
+    text-align: right;
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
 }
 
-/* -------- Header Styles -------- */
-/* -------- Header Styles -------- */
-/* -------- Header Styles -------- */
+/* Curiosities Styles */
 
+.curiosities {
+    padding: 20px;
+}
+
+.curiosity {
+    margin: 10px 0px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 2px var(--light-blue);
+}
+
+.curiosity__texts {
+    width: 80%;
+    padding: 10px;
+}
+
+.curiosity__title {
+    color: var(--dark-blue);
+}
+
+.curiosity__image {
+    width: 80px;
+    height: 80px;
+}
+
+.curiosity__icon {
+    width: 100%;
+}
+
+
+/* Hamburguer Menu Styles */
 
 .hamburguer-menu {
-    display: inline-block;
-    background-color: purple;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    position: absolute;
-    top: 5px;
-    right: 5px;
+
 }
+
+/* Footer Styles */
+
+.footer {
+    padding: 20px;
+    font-size: 1.5rem;
+    color: var(--white);
+    text-align: center;
+    background-color: var(--blue);
+}
+
 
 /* -------- Media Queries -------- */
 
@@ -354,9 +410,18 @@ body {
         width: 50%;
     }
 
+    .db-info__image:first-child {
+        order: -1;
+    }
+
     .character {
         width: calc(33% - 10px);
     }
+
+    .curiosity__texts {
+        width: 90%;
+    }
+    
 }
 
 @media screen and (min-width: 992px) {
